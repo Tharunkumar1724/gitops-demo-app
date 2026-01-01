@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frontend</title>
+</head>
+<body>
+  <h1>Frontend</h1>
+  <button onclick="callApi()">Call Backend</button>
+  <p id="output"></p>
+
+  <script>
+    async function callApi() {
+      const res = await fetch("http://127.0.0.1:8000/api/hello");
+      const data = await res.json();
+      document.getElementById("output").innerText = data.message;
+    }
+  </script>
+</body>
+</html>
